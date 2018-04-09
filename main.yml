@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+  - name: Call the ping module
+    ping:
+      data: foo 
+    register: ping_answer
+  - name: Output the value of the ping answer
+    debug:
+       msg: "Ping-return iz '{{ping_answer.ping}}'"
+
